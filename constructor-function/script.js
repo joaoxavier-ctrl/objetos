@@ -7,8 +7,6 @@ function Pessoa(nome, idade) {
   };
 }
 
-
-
 // Crie 3 pessoas, João - 20 anos,
 // Maria - 25 anos, Bruno - 15 anos
 const joao = new Pessoa('João', 20);
@@ -24,11 +22,13 @@ const bruna = new Pessoa('Bruna', 15);
 // removeClass(classe), remove a classe a todos os elementos
 function Dom(seletor) {
   this.element = document.querySelectorAll(seletor);
+
   this.addClass = function(classe) {
     this.element.forEach(function(element) {
       element.classList.add(classe);
     });
   }
+
   this.removeClass = function(classe) {
     this.element.forEach(function(element) {
       element.classList.remove(classe);
@@ -37,6 +37,7 @@ function Dom(seletor) {
 }
 
 const lista = new Dom('ul');
+console.log(lista.element);
 
 lista.addClass('ativo');
 lista.removeClass('ativo');
